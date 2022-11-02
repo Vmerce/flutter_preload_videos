@@ -3,11 +3,17 @@ import 'package:flutter_preload_videos/core/constants.dart';
 class ApiService {
   static final List<String> _videos = [
     'https://assets.mixkit.co/videos/preview/mixkit-woman-turning-off-her-alarm-clock-42897-large.mp4',
+    'https://static.ybhospital.net/test-video-1.mp4',
     'https://assets.mixkit.co/videos/preview/mixkit-pair-of-plantain-stalks-in-a-close-up-shot-42956-large.mp4',
+    'https://static.ybhospital.net/test-video-2.mp4',
     'https://assets.mixkit.co/videos/preview/mixkit-aerial-view-of-city-traffic-at-night-11-large.mp4',
+    'https://static.ybhospital.net/test-video-3.mp4',
     'https://assets.mixkit.co/videos/preview/mixkit-countryside-meadow-4075-large.mp4',
+    'https://static.ybhospital.net/test-video-4.mp4',
     'https://assets.mixkit.co/videos/preview/mixkit-texture-of-different-fruits-42959-large.mp4',
+    'https://static.ybhospital.net/test-video-5.mp4',
     'https://assets.mixkit.co/videos/preview/mixkit-landscape-of-mountains-and-sunset-3128-large.mp4',
+    'https://static.ybhospital.net/test-video-6.mp4',
     'https://assets.mixkit.co/videos/preview/mixkit-woman-washing-her-hair-while-taking-a-bath-42915-large.mp4',
     'https://assets.mixkit.co/videos/preview/mixkit-clouds-and-blue-sky-2408-large.mp4',
     'https://assets.mixkit.co/videos/preview/mixkit-different-types-of-fresh-fruit-in-presentation-video-42941-large.mp4',
@@ -51,7 +57,7 @@ class ApiService {
       return [];
     }
 
-    await Future.delayed(const Duration(seconds: kLatency));
+    await Future.delayed(const Duration(milliseconds: kLatency));
 
     if ((id + kNextLimit >= _videos.length)) {
       return _videos.sublist(id, _videos.length);
