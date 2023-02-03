@@ -2,6 +2,7 @@ import 'dart:isolate';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_preload_videos/bloc/post_model.dart';
 import 'package:flutter_preload_videos/core/constants.dart';
 import 'package:flutter_preload_videos/service/navigation_service.dart';
 import 'package:flutter_preload_videos/video_page.dart';
@@ -20,7 +21,7 @@ void main() async {
 
 /// Isolate to fetch videos in the background so that the video experience is not disturbed.
 /// Without isolate, the video will be paused whenever there is an API call
-/// because the main thread will be busy fetching new video URLs. 
+/// because the main thread will be busy fetching new video URLs.
 ///
 /// https://blog.codemagic.io/understanding-flutter-isolates/
 Future createIsolate(int index) async {
@@ -39,11 +40,11 @@ Future createIsolate(int index) async {
   isolateSendPort.send([index, isolateResponseReceivePort.sendPort]);
 
   final isolateResponse = await isolateResponseReceivePort.first;
-  final _urls = isolateResponse;
+  final _posts = isolateResponse;
 
   // Update new urls
   BlocProvider.of<PreloadBloc>(context, listen: false)
-      .add(PreloadEvent.updateUrls(_urls));
+      .add(PreloadEvent.updatePosts(_posts));
 }
 
 void getVideosTask(SendPort mySendPort) async {
@@ -57,10 +58,10 @@ void getVideosTask(SendPort mySendPort) async {
 
       final SendPort isolateResponseSendPort = message[1];
 
-      final List<String> _urls =
-          await ApiService.getVideos(id: index + kPreloadLimit);
+      final List<PostModel> _posts =
+          await ApiService.getPosts(id: index + kPreloadLimit);
 
-      isolateResponseSendPort.send(_urls);
+      isolateResponseSendPort.send(_posts);
     }
   }
 }

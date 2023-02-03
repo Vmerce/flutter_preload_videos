@@ -20,7 +20,10 @@ mixin _$PreloadEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() getVideosFromApi,
     required TResult Function() setLoading,
-    required TResult Function(List<String> urls) updateUrls,
+    required TResult Function(int index) resetPosts,
+    required TResult Function(int index) pauseVideo,
+    required TResult Function(int index) playVideo,
+    required TResult Function(List<PostModel> posts) updatePosts,
     required TResult Function(int index) onVideoIndexChanged,
   }) =>
       throw _privateConstructorUsedError;
@@ -28,7 +31,10 @@ mixin _$PreloadEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? getVideosFromApi,
     TResult Function()? setLoading,
-    TResult Function(List<String> urls)? updateUrls,
+    TResult Function(int index)? resetPosts,
+    TResult Function(int index)? pauseVideo,
+    TResult Function(int index)? playVideo,
+    TResult Function(List<PostModel> posts)? updatePosts,
     TResult Function(int index)? onVideoIndexChanged,
   }) =>
       throw _privateConstructorUsedError;
@@ -36,7 +42,10 @@ mixin _$PreloadEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getVideosFromApi,
     TResult Function()? setLoading,
-    TResult Function(List<String> urls)? updateUrls,
+    TResult Function(int index)? resetPosts,
+    TResult Function(int index)? pauseVideo,
+    TResult Function(int index)? playVideo,
+    TResult Function(List<PostModel> posts)? updatePosts,
     TResult Function(int index)? onVideoIndexChanged,
     required TResult orElse(),
   }) =>
@@ -45,7 +54,10 @@ mixin _$PreloadEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_GetVideosFromApi value) getVideosFromApi,
     required TResult Function(_SetLoading value) setLoading,
-    required TResult Function(_UpdateUrls value) updateUrls,
+    required TResult Function(_ResetPosts value) resetPosts,
+    required TResult Function(_PauseVideo value) pauseVideo,
+    required TResult Function(_PlayVideo value) playVideo,
+    required TResult Function(_updatePosts value) updatePosts,
     required TResult Function(_OnVideoIndexChanged value) onVideoIndexChanged,
   }) =>
       throw _privateConstructorUsedError;
@@ -53,7 +65,10 @@ mixin _$PreloadEvent {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_GetVideosFromApi value)? getVideosFromApi,
     TResult Function(_SetLoading value)? setLoading,
-    TResult Function(_UpdateUrls value)? updateUrls,
+    TResult Function(_ResetPosts value)? resetPosts,
+    TResult Function(_PauseVideo value)? pauseVideo,
+    TResult Function(_PlayVideo value)? playVideo,
+    TResult Function(_updatePosts value)? updatePosts,
     TResult Function(_OnVideoIndexChanged value)? onVideoIndexChanged,
   }) =>
       throw _privateConstructorUsedError;
@@ -61,7 +76,10 @@ mixin _$PreloadEvent {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetVideosFromApi value)? getVideosFromApi,
     TResult Function(_SetLoading value)? setLoading,
-    TResult Function(_UpdateUrls value)? updateUrls,
+    TResult Function(_ResetPosts value)? resetPosts,
+    TResult Function(_PauseVideo value)? pauseVideo,
+    TResult Function(_PlayVideo value)? playVideo,
+    TResult Function(_updatePosts value)? updatePosts,
     TResult Function(_OnVideoIndexChanged value)? onVideoIndexChanged,
     required TResult orElse(),
   }) =>
@@ -127,7 +145,10 @@ class _$_GetVideosFromApi implements _GetVideosFromApi {
   TResult when<TResult extends Object?>({
     required TResult Function() getVideosFromApi,
     required TResult Function() setLoading,
-    required TResult Function(List<String> urls) updateUrls,
+    required TResult Function(int index) resetPosts,
+    required TResult Function(int index) pauseVideo,
+    required TResult Function(int index) playVideo,
+    required TResult Function(List<PostModel> posts) updatePosts,
     required TResult Function(int index) onVideoIndexChanged,
   }) {
     return getVideosFromApi();
@@ -138,7 +159,10 @@ class _$_GetVideosFromApi implements _GetVideosFromApi {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? getVideosFromApi,
     TResult Function()? setLoading,
-    TResult Function(List<String> urls)? updateUrls,
+    TResult Function(int index)? resetPosts,
+    TResult Function(int index)? pauseVideo,
+    TResult Function(int index)? playVideo,
+    TResult Function(List<PostModel> posts)? updatePosts,
     TResult Function(int index)? onVideoIndexChanged,
   }) {
     return getVideosFromApi?.call();
@@ -149,7 +173,10 @@ class _$_GetVideosFromApi implements _GetVideosFromApi {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getVideosFromApi,
     TResult Function()? setLoading,
-    TResult Function(List<String> urls)? updateUrls,
+    TResult Function(int index)? resetPosts,
+    TResult Function(int index)? pauseVideo,
+    TResult Function(int index)? playVideo,
+    TResult Function(List<PostModel> posts)? updatePosts,
     TResult Function(int index)? onVideoIndexChanged,
     required TResult orElse(),
   }) {
@@ -164,7 +191,10 @@ class _$_GetVideosFromApi implements _GetVideosFromApi {
   TResult map<TResult extends Object?>({
     required TResult Function(_GetVideosFromApi value) getVideosFromApi,
     required TResult Function(_SetLoading value) setLoading,
-    required TResult Function(_UpdateUrls value) updateUrls,
+    required TResult Function(_ResetPosts value) resetPosts,
+    required TResult Function(_PauseVideo value) pauseVideo,
+    required TResult Function(_PlayVideo value) playVideo,
+    required TResult Function(_updatePosts value) updatePosts,
     required TResult Function(_OnVideoIndexChanged value) onVideoIndexChanged,
   }) {
     return getVideosFromApi(this);
@@ -175,7 +205,10 @@ class _$_GetVideosFromApi implements _GetVideosFromApi {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_GetVideosFromApi value)? getVideosFromApi,
     TResult Function(_SetLoading value)? setLoading,
-    TResult Function(_UpdateUrls value)? updateUrls,
+    TResult Function(_ResetPosts value)? resetPosts,
+    TResult Function(_PauseVideo value)? pauseVideo,
+    TResult Function(_PlayVideo value)? playVideo,
+    TResult Function(_updatePosts value)? updatePosts,
     TResult Function(_OnVideoIndexChanged value)? onVideoIndexChanged,
   }) {
     return getVideosFromApi?.call(this);
@@ -186,7 +219,10 @@ class _$_GetVideosFromApi implements _GetVideosFromApi {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetVideosFromApi value)? getVideosFromApi,
     TResult Function(_SetLoading value)? setLoading,
-    TResult Function(_UpdateUrls value)? updateUrls,
+    TResult Function(_ResetPosts value)? resetPosts,
+    TResult Function(_PauseVideo value)? pauseVideo,
+    TResult Function(_PlayVideo value)? playVideo,
+    TResult Function(_updatePosts value)? updatePosts,
     TResult Function(_OnVideoIndexChanged value)? onVideoIndexChanged,
     required TResult orElse(),
   }) {
@@ -243,7 +279,10 @@ class _$_SetLoading implements _SetLoading {
   TResult when<TResult extends Object?>({
     required TResult Function() getVideosFromApi,
     required TResult Function() setLoading,
-    required TResult Function(List<String> urls) updateUrls,
+    required TResult Function(int index) resetPosts,
+    required TResult Function(int index) pauseVideo,
+    required TResult Function(int index) playVideo,
+    required TResult Function(List<PostModel> posts) updatePosts,
     required TResult Function(int index) onVideoIndexChanged,
   }) {
     return setLoading();
@@ -254,7 +293,10 @@ class _$_SetLoading implements _SetLoading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? getVideosFromApi,
     TResult Function()? setLoading,
-    TResult Function(List<String> urls)? updateUrls,
+    TResult Function(int index)? resetPosts,
+    TResult Function(int index)? pauseVideo,
+    TResult Function(int index)? playVideo,
+    TResult Function(List<PostModel> posts)? updatePosts,
     TResult Function(int index)? onVideoIndexChanged,
   }) {
     return setLoading?.call();
@@ -265,7 +307,10 @@ class _$_SetLoading implements _SetLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getVideosFromApi,
     TResult Function()? setLoading,
-    TResult Function(List<String> urls)? updateUrls,
+    TResult Function(int index)? resetPosts,
+    TResult Function(int index)? pauseVideo,
+    TResult Function(int index)? playVideo,
+    TResult Function(List<PostModel> posts)? updatePosts,
     TResult Function(int index)? onVideoIndexChanged,
     required TResult orElse(),
   }) {
@@ -280,7 +325,10 @@ class _$_SetLoading implements _SetLoading {
   TResult map<TResult extends Object?>({
     required TResult Function(_GetVideosFromApi value) getVideosFromApi,
     required TResult Function(_SetLoading value) setLoading,
-    required TResult Function(_UpdateUrls value) updateUrls,
+    required TResult Function(_ResetPosts value) resetPosts,
+    required TResult Function(_PauseVideo value) pauseVideo,
+    required TResult Function(_PlayVideo value) playVideo,
+    required TResult Function(_updatePosts value) updatePosts,
     required TResult Function(_OnVideoIndexChanged value) onVideoIndexChanged,
   }) {
     return setLoading(this);
@@ -291,7 +339,10 @@ class _$_SetLoading implements _SetLoading {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_GetVideosFromApi value)? getVideosFromApi,
     TResult Function(_SetLoading value)? setLoading,
-    TResult Function(_UpdateUrls value)? updateUrls,
+    TResult Function(_ResetPosts value)? resetPosts,
+    TResult Function(_PauseVideo value)? pauseVideo,
+    TResult Function(_PlayVideo value)? playVideo,
+    TResult Function(_updatePosts value)? updatePosts,
     TResult Function(_OnVideoIndexChanged value)? onVideoIndexChanged,
   }) {
     return setLoading?.call(this);
@@ -302,7 +353,10 @@ class _$_SetLoading implements _SetLoading {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetVideosFromApi value)? getVideosFromApi,
     TResult Function(_SetLoading value)? setLoading,
-    TResult Function(_UpdateUrls value)? updateUrls,
+    TResult Function(_ResetPosts value)? resetPosts,
+    TResult Function(_PauseVideo value)? pauseVideo,
+    TResult Function(_PlayVideo value)? playVideo,
+    TResult Function(_updatePosts value)? updatePosts,
     TResult Function(_OnVideoIndexChanged value)? onVideoIndexChanged,
     required TResult orElse(),
   }) {
@@ -318,79 +372,78 @@ abstract class _SetLoading implements PreloadEvent {
 }
 
 /// @nodoc
-abstract class _$$_UpdateUrlsCopyWith<$Res> {
-  factory _$$_UpdateUrlsCopyWith(
-          _$_UpdateUrls value, $Res Function(_$_UpdateUrls) then) =
-      __$$_UpdateUrlsCopyWithImpl<$Res>;
-  $Res call({List<String> urls});
+abstract class _$$_ResetPostsCopyWith<$Res> {
+  factory _$$_ResetPostsCopyWith(
+          _$_ResetPosts value, $Res Function(_$_ResetPosts) then) =
+      __$$_ResetPostsCopyWithImpl<$Res>;
+  $Res call({int index});
 }
 
 /// @nodoc
-class __$$_UpdateUrlsCopyWithImpl<$Res> extends _$PreloadEventCopyWithImpl<$Res>
-    implements _$$_UpdateUrlsCopyWith<$Res> {
-  __$$_UpdateUrlsCopyWithImpl(
-      _$_UpdateUrls _value, $Res Function(_$_UpdateUrls) _then)
-      : super(_value, (v) => _then(v as _$_UpdateUrls));
+class __$$_ResetPostsCopyWithImpl<$Res> extends _$PreloadEventCopyWithImpl<$Res>
+    implements _$$_ResetPostsCopyWith<$Res> {
+  __$$_ResetPostsCopyWithImpl(
+      _$_ResetPosts _value, $Res Function(_$_ResetPosts) _then)
+      : super(_value, (v) => _then(v as _$_ResetPosts));
 
   @override
-  _$_UpdateUrls get _value => super._value as _$_UpdateUrls;
+  _$_ResetPosts get _value => super._value as _$_ResetPosts;
 
   @override
   $Res call({
-    Object? urls = freezed,
+    Object? index = freezed,
   }) {
-    return _then(_$_UpdateUrls(
-      urls == freezed
-          ? _value._urls
-          : urls // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+    return _then(_$_ResetPosts(
+      index == freezed
+          ? _value.index
+          : index // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_UpdateUrls implements _UpdateUrls {
-  const _$_UpdateUrls(final List<String> urls) : _urls = urls;
+class _$_ResetPosts implements _ResetPosts {
+  const _$_ResetPosts(this.index);
 
-  final List<String> _urls;
   @override
-  List<String> get urls {
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_urls);
-  }
+  final int index;
 
   @override
   String toString() {
-    return 'PreloadEvent.updateUrls(urls: $urls)';
+    return 'PreloadEvent.resetPosts(index: $index)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UpdateUrls &&
-            const DeepCollectionEquality().equals(other._urls, _urls));
+            other is _$_ResetPosts &&
+            const DeepCollectionEquality().equals(other.index, index));
   }
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_urls));
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(index));
 
   @JsonKey(ignore: true)
   @override
-  _$$_UpdateUrlsCopyWith<_$_UpdateUrls> get copyWith =>
-      __$$_UpdateUrlsCopyWithImpl<_$_UpdateUrls>(this, _$identity);
+  _$$_ResetPostsCopyWith<_$_ResetPosts> get copyWith =>
+      __$$_ResetPostsCopyWithImpl<_$_ResetPosts>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getVideosFromApi,
     required TResult Function() setLoading,
-    required TResult Function(List<String> urls) updateUrls,
+    required TResult Function(int index) resetPosts,
+    required TResult Function(int index) pauseVideo,
+    required TResult Function(int index) playVideo,
+    required TResult Function(List<PostModel> posts) updatePosts,
     required TResult Function(int index) onVideoIndexChanged,
   }) {
-    return updateUrls(urls);
+    return resetPosts(index);
   }
 
   @override
@@ -398,10 +451,13 @@ class _$_UpdateUrls implements _UpdateUrls {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? getVideosFromApi,
     TResult Function()? setLoading,
-    TResult Function(List<String> urls)? updateUrls,
+    TResult Function(int index)? resetPosts,
+    TResult Function(int index)? pauseVideo,
+    TResult Function(int index)? playVideo,
+    TResult Function(List<PostModel> posts)? updatePosts,
     TResult Function(int index)? onVideoIndexChanged,
   }) {
-    return updateUrls?.call(urls);
+    return resetPosts?.call(index);
   }
 
   @override
@@ -409,12 +465,15 @@ class _$_UpdateUrls implements _UpdateUrls {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getVideosFromApi,
     TResult Function()? setLoading,
-    TResult Function(List<String> urls)? updateUrls,
+    TResult Function(int index)? resetPosts,
+    TResult Function(int index)? pauseVideo,
+    TResult Function(int index)? playVideo,
+    TResult Function(List<PostModel> posts)? updatePosts,
     TResult Function(int index)? onVideoIndexChanged,
     required TResult orElse(),
   }) {
-    if (updateUrls != null) {
-      return updateUrls(urls);
+    if (resetPosts != null) {
+      return resetPosts(index);
     }
     return orElse();
   }
@@ -424,10 +483,13 @@ class _$_UpdateUrls implements _UpdateUrls {
   TResult map<TResult extends Object?>({
     required TResult Function(_GetVideosFromApi value) getVideosFromApi,
     required TResult Function(_SetLoading value) setLoading,
-    required TResult Function(_UpdateUrls value) updateUrls,
+    required TResult Function(_ResetPosts value) resetPosts,
+    required TResult Function(_PauseVideo value) pauseVideo,
+    required TResult Function(_PlayVideo value) playVideo,
+    required TResult Function(_updatePosts value) updatePosts,
     required TResult Function(_OnVideoIndexChanged value) onVideoIndexChanged,
   }) {
-    return updateUrls(this);
+    return resetPosts(this);
   }
 
   @override
@@ -435,10 +497,13 @@ class _$_UpdateUrls implements _UpdateUrls {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_GetVideosFromApi value)? getVideosFromApi,
     TResult Function(_SetLoading value)? setLoading,
-    TResult Function(_UpdateUrls value)? updateUrls,
+    TResult Function(_ResetPosts value)? resetPosts,
+    TResult Function(_PauseVideo value)? pauseVideo,
+    TResult Function(_PlayVideo value)? playVideo,
+    TResult Function(_updatePosts value)? updatePosts,
     TResult Function(_OnVideoIndexChanged value)? onVideoIndexChanged,
   }) {
-    return updateUrls?.call(this);
+    return resetPosts?.call(this);
   }
 
   @override
@@ -446,23 +511,520 @@ class _$_UpdateUrls implements _UpdateUrls {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetVideosFromApi value)? getVideosFromApi,
     TResult Function(_SetLoading value)? setLoading,
-    TResult Function(_UpdateUrls value)? updateUrls,
+    TResult Function(_ResetPosts value)? resetPosts,
+    TResult Function(_PauseVideo value)? pauseVideo,
+    TResult Function(_PlayVideo value)? playVideo,
+    TResult Function(_updatePosts value)? updatePosts,
     TResult Function(_OnVideoIndexChanged value)? onVideoIndexChanged,
     required TResult orElse(),
   }) {
-    if (updateUrls != null) {
-      return updateUrls(this);
+    if (resetPosts != null) {
+      return resetPosts(this);
     }
     return orElse();
   }
 }
 
-abstract class _UpdateUrls implements PreloadEvent {
-  const factory _UpdateUrls(final List<String> urls) = _$_UpdateUrls;
+abstract class _ResetPosts implements PreloadEvent {
+  const factory _ResetPosts(final int index) = _$_ResetPosts;
 
-  List<String> get urls => throw _privateConstructorUsedError;
+  int get index => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$$_UpdateUrlsCopyWith<_$_UpdateUrls> get copyWith =>
+  _$$_ResetPostsCopyWith<_$_ResetPosts> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_PauseVideoCopyWith<$Res> {
+  factory _$$_PauseVideoCopyWith(
+          _$_PauseVideo value, $Res Function(_$_PauseVideo) then) =
+      __$$_PauseVideoCopyWithImpl<$Res>;
+  $Res call({int index});
+}
+
+/// @nodoc
+class __$$_PauseVideoCopyWithImpl<$Res> extends _$PreloadEventCopyWithImpl<$Res>
+    implements _$$_PauseVideoCopyWith<$Res> {
+  __$$_PauseVideoCopyWithImpl(
+      _$_PauseVideo _value, $Res Function(_$_PauseVideo) _then)
+      : super(_value, (v) => _then(v as _$_PauseVideo));
+
+  @override
+  _$_PauseVideo get _value => super._value as _$_PauseVideo;
+
+  @override
+  $Res call({
+    Object? index = freezed,
+  }) {
+    return _then(_$_PauseVideo(
+      index == freezed
+          ? _value.index
+          : index // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_PauseVideo implements _PauseVideo {
+  const _$_PauseVideo(this.index);
+
+  @override
+  final int index;
+
+  @override
+  String toString() {
+    return 'PreloadEvent.pauseVideo(index: $index)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_PauseVideo &&
+            const DeepCollectionEquality().equals(other.index, index));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(index));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_PauseVideoCopyWith<_$_PauseVideo> get copyWith =>
+      __$$_PauseVideoCopyWithImpl<_$_PauseVideo>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getVideosFromApi,
+    required TResult Function() setLoading,
+    required TResult Function(int index) resetPosts,
+    required TResult Function(int index) pauseVideo,
+    required TResult Function(int index) playVideo,
+    required TResult Function(List<PostModel> posts) updatePosts,
+    required TResult Function(int index) onVideoIndexChanged,
+  }) {
+    return pauseVideo(index);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? getVideosFromApi,
+    TResult Function()? setLoading,
+    TResult Function(int index)? resetPosts,
+    TResult Function(int index)? pauseVideo,
+    TResult Function(int index)? playVideo,
+    TResult Function(List<PostModel> posts)? updatePosts,
+    TResult Function(int index)? onVideoIndexChanged,
+  }) {
+    return pauseVideo?.call(index);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getVideosFromApi,
+    TResult Function()? setLoading,
+    TResult Function(int index)? resetPosts,
+    TResult Function(int index)? pauseVideo,
+    TResult Function(int index)? playVideo,
+    TResult Function(List<PostModel> posts)? updatePosts,
+    TResult Function(int index)? onVideoIndexChanged,
+    required TResult orElse(),
+  }) {
+    if (pauseVideo != null) {
+      return pauseVideo(index);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_GetVideosFromApi value) getVideosFromApi,
+    required TResult Function(_SetLoading value) setLoading,
+    required TResult Function(_ResetPosts value) resetPosts,
+    required TResult Function(_PauseVideo value) pauseVideo,
+    required TResult Function(_PlayVideo value) playVideo,
+    required TResult Function(_updatePosts value) updatePosts,
+    required TResult Function(_OnVideoIndexChanged value) onVideoIndexChanged,
+  }) {
+    return pauseVideo(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_GetVideosFromApi value)? getVideosFromApi,
+    TResult Function(_SetLoading value)? setLoading,
+    TResult Function(_ResetPosts value)? resetPosts,
+    TResult Function(_PauseVideo value)? pauseVideo,
+    TResult Function(_PlayVideo value)? playVideo,
+    TResult Function(_updatePosts value)? updatePosts,
+    TResult Function(_OnVideoIndexChanged value)? onVideoIndexChanged,
+  }) {
+    return pauseVideo?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_GetVideosFromApi value)? getVideosFromApi,
+    TResult Function(_SetLoading value)? setLoading,
+    TResult Function(_ResetPosts value)? resetPosts,
+    TResult Function(_PauseVideo value)? pauseVideo,
+    TResult Function(_PlayVideo value)? playVideo,
+    TResult Function(_updatePosts value)? updatePosts,
+    TResult Function(_OnVideoIndexChanged value)? onVideoIndexChanged,
+    required TResult orElse(),
+  }) {
+    if (pauseVideo != null) {
+      return pauseVideo(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _PauseVideo implements PreloadEvent {
+  const factory _PauseVideo(final int index) = _$_PauseVideo;
+
+  int get index => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$$_PauseVideoCopyWith<_$_PauseVideo> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_PlayVideoCopyWith<$Res> {
+  factory _$$_PlayVideoCopyWith(
+          _$_PlayVideo value, $Res Function(_$_PlayVideo) then) =
+      __$$_PlayVideoCopyWithImpl<$Res>;
+  $Res call({int index});
+}
+
+/// @nodoc
+class __$$_PlayVideoCopyWithImpl<$Res> extends _$PreloadEventCopyWithImpl<$Res>
+    implements _$$_PlayVideoCopyWith<$Res> {
+  __$$_PlayVideoCopyWithImpl(
+      _$_PlayVideo _value, $Res Function(_$_PlayVideo) _then)
+      : super(_value, (v) => _then(v as _$_PlayVideo));
+
+  @override
+  _$_PlayVideo get _value => super._value as _$_PlayVideo;
+
+  @override
+  $Res call({
+    Object? index = freezed,
+  }) {
+    return _then(_$_PlayVideo(
+      index == freezed
+          ? _value.index
+          : index // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_PlayVideo implements _PlayVideo {
+  const _$_PlayVideo(this.index);
+
+  @override
+  final int index;
+
+  @override
+  String toString() {
+    return 'PreloadEvent.playVideo(index: $index)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_PlayVideo &&
+            const DeepCollectionEquality().equals(other.index, index));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(index));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_PlayVideoCopyWith<_$_PlayVideo> get copyWith =>
+      __$$_PlayVideoCopyWithImpl<_$_PlayVideo>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getVideosFromApi,
+    required TResult Function() setLoading,
+    required TResult Function(int index) resetPosts,
+    required TResult Function(int index) pauseVideo,
+    required TResult Function(int index) playVideo,
+    required TResult Function(List<PostModel> posts) updatePosts,
+    required TResult Function(int index) onVideoIndexChanged,
+  }) {
+    return playVideo(index);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? getVideosFromApi,
+    TResult Function()? setLoading,
+    TResult Function(int index)? resetPosts,
+    TResult Function(int index)? pauseVideo,
+    TResult Function(int index)? playVideo,
+    TResult Function(List<PostModel> posts)? updatePosts,
+    TResult Function(int index)? onVideoIndexChanged,
+  }) {
+    return playVideo?.call(index);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getVideosFromApi,
+    TResult Function()? setLoading,
+    TResult Function(int index)? resetPosts,
+    TResult Function(int index)? pauseVideo,
+    TResult Function(int index)? playVideo,
+    TResult Function(List<PostModel> posts)? updatePosts,
+    TResult Function(int index)? onVideoIndexChanged,
+    required TResult orElse(),
+  }) {
+    if (playVideo != null) {
+      return playVideo(index);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_GetVideosFromApi value) getVideosFromApi,
+    required TResult Function(_SetLoading value) setLoading,
+    required TResult Function(_ResetPosts value) resetPosts,
+    required TResult Function(_PauseVideo value) pauseVideo,
+    required TResult Function(_PlayVideo value) playVideo,
+    required TResult Function(_updatePosts value) updatePosts,
+    required TResult Function(_OnVideoIndexChanged value) onVideoIndexChanged,
+  }) {
+    return playVideo(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_GetVideosFromApi value)? getVideosFromApi,
+    TResult Function(_SetLoading value)? setLoading,
+    TResult Function(_ResetPosts value)? resetPosts,
+    TResult Function(_PauseVideo value)? pauseVideo,
+    TResult Function(_PlayVideo value)? playVideo,
+    TResult Function(_updatePosts value)? updatePosts,
+    TResult Function(_OnVideoIndexChanged value)? onVideoIndexChanged,
+  }) {
+    return playVideo?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_GetVideosFromApi value)? getVideosFromApi,
+    TResult Function(_SetLoading value)? setLoading,
+    TResult Function(_ResetPosts value)? resetPosts,
+    TResult Function(_PauseVideo value)? pauseVideo,
+    TResult Function(_PlayVideo value)? playVideo,
+    TResult Function(_updatePosts value)? updatePosts,
+    TResult Function(_OnVideoIndexChanged value)? onVideoIndexChanged,
+    required TResult orElse(),
+  }) {
+    if (playVideo != null) {
+      return playVideo(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _PlayVideo implements PreloadEvent {
+  const factory _PlayVideo(final int index) = _$_PlayVideo;
+
+  int get index => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$$_PlayVideoCopyWith<_$_PlayVideo> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_updatePostsCopyWith<$Res> {
+  factory _$$_updatePostsCopyWith(
+          _$_updatePosts value, $Res Function(_$_updatePosts) then) =
+      __$$_updatePostsCopyWithImpl<$Res>;
+  $Res call({List<PostModel> posts});
+}
+
+/// @nodoc
+class __$$_updatePostsCopyWithImpl<$Res>
+    extends _$PreloadEventCopyWithImpl<$Res>
+    implements _$$_updatePostsCopyWith<$Res> {
+  __$$_updatePostsCopyWithImpl(
+      _$_updatePosts _value, $Res Function(_$_updatePosts) _then)
+      : super(_value, (v) => _then(v as _$_updatePosts));
+
+  @override
+  _$_updatePosts get _value => super._value as _$_updatePosts;
+
+  @override
+  $Res call({
+    Object? posts = freezed,
+  }) {
+    return _then(_$_updatePosts(
+      posts == freezed
+          ? _value._posts
+          : posts // ignore: cast_nullable_to_non_nullable
+              as List<PostModel>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_updatePosts implements _updatePosts {
+  const _$_updatePosts(final List<PostModel> posts) : _posts = posts;
+
+  final List<PostModel> _posts;
+  @override
+  List<PostModel> get posts {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_posts);
+  }
+
+  @override
+  String toString() {
+    return 'PreloadEvent.updatePosts(posts: $posts)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_updatePosts &&
+            const DeepCollectionEquality().equals(other._posts, _posts));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_posts));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_updatePostsCopyWith<_$_updatePosts> get copyWith =>
+      __$$_updatePostsCopyWithImpl<_$_updatePosts>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getVideosFromApi,
+    required TResult Function() setLoading,
+    required TResult Function(int index) resetPosts,
+    required TResult Function(int index) pauseVideo,
+    required TResult Function(int index) playVideo,
+    required TResult Function(List<PostModel> posts) updatePosts,
+    required TResult Function(int index) onVideoIndexChanged,
+  }) {
+    return updatePosts(posts);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? getVideosFromApi,
+    TResult Function()? setLoading,
+    TResult Function(int index)? resetPosts,
+    TResult Function(int index)? pauseVideo,
+    TResult Function(int index)? playVideo,
+    TResult Function(List<PostModel> posts)? updatePosts,
+    TResult Function(int index)? onVideoIndexChanged,
+  }) {
+    return updatePosts?.call(posts);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getVideosFromApi,
+    TResult Function()? setLoading,
+    TResult Function(int index)? resetPosts,
+    TResult Function(int index)? pauseVideo,
+    TResult Function(int index)? playVideo,
+    TResult Function(List<PostModel> posts)? updatePosts,
+    TResult Function(int index)? onVideoIndexChanged,
+    required TResult orElse(),
+  }) {
+    if (updatePosts != null) {
+      return updatePosts(posts);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_GetVideosFromApi value) getVideosFromApi,
+    required TResult Function(_SetLoading value) setLoading,
+    required TResult Function(_ResetPosts value) resetPosts,
+    required TResult Function(_PauseVideo value) pauseVideo,
+    required TResult Function(_PlayVideo value) playVideo,
+    required TResult Function(_updatePosts value) updatePosts,
+    required TResult Function(_OnVideoIndexChanged value) onVideoIndexChanged,
+  }) {
+    return updatePosts(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_GetVideosFromApi value)? getVideosFromApi,
+    TResult Function(_SetLoading value)? setLoading,
+    TResult Function(_ResetPosts value)? resetPosts,
+    TResult Function(_PauseVideo value)? pauseVideo,
+    TResult Function(_PlayVideo value)? playVideo,
+    TResult Function(_updatePosts value)? updatePosts,
+    TResult Function(_OnVideoIndexChanged value)? onVideoIndexChanged,
+  }) {
+    return updatePosts?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_GetVideosFromApi value)? getVideosFromApi,
+    TResult Function(_SetLoading value)? setLoading,
+    TResult Function(_ResetPosts value)? resetPosts,
+    TResult Function(_PauseVideo value)? pauseVideo,
+    TResult Function(_PlayVideo value)? playVideo,
+    TResult Function(_updatePosts value)? updatePosts,
+    TResult Function(_OnVideoIndexChanged value)? onVideoIndexChanged,
+    required TResult orElse(),
+  }) {
+    if (updatePosts != null) {
+      return updatePosts(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _updatePosts implements PreloadEvent {
+  const factory _updatePosts(final List<PostModel> posts) = _$_updatePosts;
+
+  List<PostModel> get posts => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$$_updatePostsCopyWith<_$_updatePosts> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -534,7 +1096,10 @@ class _$_OnVideoIndexChanged implements _OnVideoIndexChanged {
   TResult when<TResult extends Object?>({
     required TResult Function() getVideosFromApi,
     required TResult Function() setLoading,
-    required TResult Function(List<String> urls) updateUrls,
+    required TResult Function(int index) resetPosts,
+    required TResult Function(int index) pauseVideo,
+    required TResult Function(int index) playVideo,
+    required TResult Function(List<PostModel> posts) updatePosts,
     required TResult Function(int index) onVideoIndexChanged,
   }) {
     return onVideoIndexChanged(index);
@@ -545,7 +1110,10 @@ class _$_OnVideoIndexChanged implements _OnVideoIndexChanged {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? getVideosFromApi,
     TResult Function()? setLoading,
-    TResult Function(List<String> urls)? updateUrls,
+    TResult Function(int index)? resetPosts,
+    TResult Function(int index)? pauseVideo,
+    TResult Function(int index)? playVideo,
+    TResult Function(List<PostModel> posts)? updatePosts,
     TResult Function(int index)? onVideoIndexChanged,
   }) {
     return onVideoIndexChanged?.call(index);
@@ -556,7 +1124,10 @@ class _$_OnVideoIndexChanged implements _OnVideoIndexChanged {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getVideosFromApi,
     TResult Function()? setLoading,
-    TResult Function(List<String> urls)? updateUrls,
+    TResult Function(int index)? resetPosts,
+    TResult Function(int index)? pauseVideo,
+    TResult Function(int index)? playVideo,
+    TResult Function(List<PostModel> posts)? updatePosts,
     TResult Function(int index)? onVideoIndexChanged,
     required TResult orElse(),
   }) {
@@ -571,7 +1142,10 @@ class _$_OnVideoIndexChanged implements _OnVideoIndexChanged {
   TResult map<TResult extends Object?>({
     required TResult Function(_GetVideosFromApi value) getVideosFromApi,
     required TResult Function(_SetLoading value) setLoading,
-    required TResult Function(_UpdateUrls value) updateUrls,
+    required TResult Function(_ResetPosts value) resetPosts,
+    required TResult Function(_PauseVideo value) pauseVideo,
+    required TResult Function(_PlayVideo value) playVideo,
+    required TResult Function(_updatePosts value) updatePosts,
     required TResult Function(_OnVideoIndexChanged value) onVideoIndexChanged,
   }) {
     return onVideoIndexChanged(this);
@@ -582,7 +1156,10 @@ class _$_OnVideoIndexChanged implements _OnVideoIndexChanged {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_GetVideosFromApi value)? getVideosFromApi,
     TResult Function(_SetLoading value)? setLoading,
-    TResult Function(_UpdateUrls value)? updateUrls,
+    TResult Function(_ResetPosts value)? resetPosts,
+    TResult Function(_PauseVideo value)? pauseVideo,
+    TResult Function(_PlayVideo value)? playVideo,
+    TResult Function(_updatePosts value)? updatePosts,
     TResult Function(_OnVideoIndexChanged value)? onVideoIndexChanged,
   }) {
     return onVideoIndexChanged?.call(this);
@@ -593,7 +1170,10 @@ class _$_OnVideoIndexChanged implements _OnVideoIndexChanged {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetVideosFromApi value)? getVideosFromApi,
     TResult Function(_SetLoading value)? setLoading,
-    TResult Function(_UpdateUrls value)? updateUrls,
+    TResult Function(_ResetPosts value)? resetPosts,
+    TResult Function(_PauseVideo value)? pauseVideo,
+    TResult Function(_PlayVideo value)? playVideo,
+    TResult Function(_updatePosts value)? updatePosts,
     TResult Function(_OnVideoIndexChanged value)? onVideoIndexChanged,
     required TResult orElse(),
   }) {
@@ -615,12 +1195,14 @@ abstract class _OnVideoIndexChanged implements PreloadEvent {
 
 /// @nodoc
 mixin _$PreloadState {
-  List<String> get urls => throw _privateConstructorUsedError;
+// required List<String> urls,
+  List<PostModel> get posts => throw _privateConstructorUsedError;
   Map<int, VideoPlayerController> get controllers =>
       throw _privateConstructorUsedError;
   int get focusedIndex => throw _privateConstructorUsedError;
   int get reloadCounter => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
+  bool get isPLaying => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $PreloadStateCopyWith<PreloadState> get copyWith =>
@@ -633,11 +1215,12 @@ abstract class $PreloadStateCopyWith<$Res> {
           PreloadState value, $Res Function(PreloadState) then) =
       _$PreloadStateCopyWithImpl<$Res>;
   $Res call(
-      {List<String> urls,
+      {List<PostModel> posts,
       Map<int, VideoPlayerController> controllers,
       int focusedIndex,
       int reloadCounter,
-      bool isLoading});
+      bool isLoading,
+      bool isPLaying});
 }
 
 /// @nodoc
@@ -650,17 +1233,18 @@ class _$PreloadStateCopyWithImpl<$Res> implements $PreloadStateCopyWith<$Res> {
 
   @override
   $Res call({
-    Object? urls = freezed,
+    Object? posts = freezed,
     Object? controllers = freezed,
     Object? focusedIndex = freezed,
     Object? reloadCounter = freezed,
     Object? isLoading = freezed,
+    Object? isPLaying = freezed,
   }) {
     return _then(_value.copyWith(
-      urls: urls == freezed
-          ? _value.urls
-          : urls // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+      posts: posts == freezed
+          ? _value.posts
+          : posts // ignore: cast_nullable_to_non_nullable
+              as List<PostModel>,
       controllers: controllers == freezed
           ? _value.controllers
           : controllers // ignore: cast_nullable_to_non_nullable
@@ -677,6 +1261,10 @@ class _$PreloadStateCopyWithImpl<$Res> implements $PreloadStateCopyWith<$Res> {
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
+      isPLaying: isPLaying == freezed
+          ? _value.isPLaying
+          : isPLaying // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -689,11 +1277,12 @@ abstract class _$$_PreloadStateCopyWith<$Res>
       __$$_PreloadStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {List<String> urls,
+      {List<PostModel> posts,
       Map<int, VideoPlayerController> controllers,
       int focusedIndex,
       int reloadCounter,
-      bool isLoading});
+      bool isLoading,
+      bool isPLaying});
 }
 
 /// @nodoc
@@ -709,17 +1298,18 @@ class __$$_PreloadStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? urls = freezed,
+    Object? posts = freezed,
     Object? controllers = freezed,
     Object? focusedIndex = freezed,
     Object? reloadCounter = freezed,
     Object? isLoading = freezed,
+    Object? isPLaying = freezed,
   }) {
     return _then(_$_PreloadState(
-      urls: urls == freezed
-          ? _value.urls
-          : urls // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+      posts: posts == freezed
+          ? _value.posts
+          : posts // ignore: cast_nullable_to_non_nullable
+              as List<PostModel>,
       controllers: controllers == freezed
           ? _value.controllers
           : controllers // ignore: cast_nullable_to_non_nullable
@@ -736,6 +1326,10 @@ class __$$_PreloadStateCopyWithImpl<$Res>
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
+      isPLaying: isPLaying == freezed
+          ? _value.isPLaying
+          : isPLaying // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -744,14 +1338,16 @@ class __$$_PreloadStateCopyWithImpl<$Res>
 
 class _$_PreloadState implements _PreloadState {
   _$_PreloadState(
-      {required this.urls,
+      {required this.posts,
       required this.controllers,
       required this.focusedIndex,
       required this.reloadCounter,
-      required this.isLoading});
+      required this.isLoading,
+      required this.isPLaying});
 
+// required List<String> urls,
   @override
-  final List<String> urls;
+  final List<PostModel> posts;
   @override
   final Map<int, VideoPlayerController> controllers;
   @override
@@ -760,10 +1356,12 @@ class _$_PreloadState implements _PreloadState {
   final int reloadCounter;
   @override
   final bool isLoading;
+  @override
+  final bool isPLaying;
 
   @override
   String toString() {
-    return 'PreloadState(urls: $urls, controllers: $controllers, focusedIndex: $focusedIndex, reloadCounter: $reloadCounter, isLoading: $isLoading)';
+    return 'PreloadState(posts: $posts, controllers: $controllers, focusedIndex: $focusedIndex, reloadCounter: $reloadCounter, isLoading: $isLoading, isPLaying: $isPLaying)';
   }
 
   @override
@@ -771,24 +1369,26 @@ class _$_PreloadState implements _PreloadState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_PreloadState &&
-            const DeepCollectionEquality().equals(other.urls, urls) &&
+            const DeepCollectionEquality().equals(other.posts, posts) &&
             const DeepCollectionEquality()
                 .equals(other.controllers, controllers) &&
             const DeepCollectionEquality()
                 .equals(other.focusedIndex, focusedIndex) &&
             const DeepCollectionEquality()
                 .equals(other.reloadCounter, reloadCounter) &&
-            const DeepCollectionEquality().equals(other.isLoading, isLoading));
+            const DeepCollectionEquality().equals(other.isLoading, isLoading) &&
+            const DeepCollectionEquality().equals(other.isPLaying, isPLaying));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(urls),
+      const DeepCollectionEquality().hash(posts),
       const DeepCollectionEquality().hash(controllers),
       const DeepCollectionEquality().hash(focusedIndex),
       const DeepCollectionEquality().hash(reloadCounter),
-      const DeepCollectionEquality().hash(isLoading));
+      const DeepCollectionEquality().hash(isLoading),
+      const DeepCollectionEquality().hash(isPLaying));
 
   @JsonKey(ignore: true)
   @override
@@ -798,14 +1398,15 @@ class _$_PreloadState implements _PreloadState {
 
 abstract class _PreloadState implements PreloadState {
   factory _PreloadState(
-      {required final List<String> urls,
+      {required final List<PostModel> posts,
       required final Map<int, VideoPlayerController> controllers,
       required final int focusedIndex,
       required final int reloadCounter,
-      required final bool isLoading}) = _$_PreloadState;
+      required final bool isLoading,
+      required final bool isPLaying}) = _$_PreloadState;
 
-  @override
-  List<String> get urls => throw _privateConstructorUsedError;
+  @override // required List<String> urls,
+  List<PostModel> get posts => throw _privateConstructorUsedError;
   @override
   Map<int, VideoPlayerController> get controllers =>
       throw _privateConstructorUsedError;
@@ -815,6 +1416,8 @@ abstract class _PreloadState implements PreloadState {
   int get reloadCounter => throw _privateConstructorUsedError;
   @override
   bool get isLoading => throw _privateConstructorUsedError;
+  @override
+  bool get isPLaying => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_PreloadStateCopyWith<_$_PreloadState> get copyWith =>

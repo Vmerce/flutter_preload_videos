@@ -1,68 +1,75 @@
+import 'package:flutter_preload_videos/bloc/post_model.dart';
 import 'package:flutter_preload_videos/core/constants.dart';
 
 class ApiService {
-  static final List<String> _videos = [
-    'https://assets.mixkit.co/videos/preview/mixkit-woman-turning-off-her-alarm-clock-42897-large.mp4',
-    'https://static.ybhospital.net/test-video-1.mp4',
-    'https://assets.mixkit.co/videos/preview/mixkit-pair-of-plantain-stalks-in-a-close-up-shot-42956-large.mp4',
-    'https://static.ybhospital.net/test-video-2.mp4',
-    'https://assets.mixkit.co/videos/preview/mixkit-aerial-view-of-city-traffic-at-night-11-large.mp4',
-    'https://static.ybhospital.net/test-video-3.mp4',
-    'https://assets.mixkit.co/videos/preview/mixkit-countryside-meadow-4075-large.mp4',
-    'https://static.ybhospital.net/test-video-4.mp4',
-    'https://assets.mixkit.co/videos/preview/mixkit-texture-of-different-fruits-42959-large.mp4',
-    'https://static.ybhospital.net/test-video-5.mp4',
-    'https://assets.mixkit.co/videos/preview/mixkit-landscape-of-mountains-and-sunset-3128-large.mp4',
-    'https://static.ybhospital.net/test-video-6.mp4',
-    'https://assets.mixkit.co/videos/preview/mixkit-woman-washing-her-hair-while-taking-a-bath-42915-large.mp4',
-    'https://assets.mixkit.co/videos/preview/mixkit-clouds-and-blue-sky-2408-large.mp4',
-    'https://assets.mixkit.co/videos/preview/mixkit-different-types-of-fresh-fruit-in-presentation-video-42941-large.mp4',
-    'https://assets.mixkit.co/videos/preview/mixkit-forest-stream-in-the-sunlight-529-large.mp4',
-    'https://assets.mixkit.co/videos/preview/mixkit-stunning-sunset-seen-from-the-sea-4119-large.mp4',
-    'https://assets.mixkit.co/videos/preview/mixkit-meadow-surrounded-by-trees-on-a-sunny-afternoon-40647-large.mp4',
-    'https://assets.mixkit.co/videos/preview/mixkit-fruit-texture-in-a-humid-environment-42958-large.mp4',
-    'https://assets.mixkit.co/videos/preview/mixkit-close-up-shot-of-a-turntable-playing-a-record-42920-large.mp4',
-    'https://assets.mixkit.co/videos/preview/mixkit-woman-serving-eggs-in-a-pan-for-breakfast-42909-large.mp4',
-    'https://assets.mixkit.co/videos/preview/mixkit-close-view-of-a-record-rotating-on-a-turntable-42921-large.mp4',
-    'https://assets.mixkit.co/videos/preview/mixkit-young-woman-finishing-preparing-her-breakfast-42911-large.mp4',
-    'https://assets.mixkit.co/videos/preview/mixkit-waterfall-in-forest-2213-large.mp4',
-    'https://assets.mixkit.co/videos/preview/mixkit-close-up-view-of-a-rotating-vinyl-record-42922-large.mp4',
-    'https://assets.mixkit.co/videos/preview/mixkit-going-down-a-curved-highway-down-a-mountain-41576-large.mp4',
-    'https://assets.mixkit.co/videos/preview/mixkit-lake-surrounded-by-dry-grass-in-the-savanna-5030-large.mp4',
-    'https://assets.mixkit.co/videos/preview/mixkit-aerial-panorama-of-a-landscape-with-mountains-and-a-lake-4249-large.mp4/',
-    'https://assets.mixkit.co/videos/preview/mixkit-curvy-road-on-a-tree-covered-hill-41537-large.mp4',
-    'https://assets.mixkit.co/videos/preview/mixkit-frying-diced-bacon-in-a-skillet-43063-large.mp4',
-    'https://assets.mixkit.co/videos/preview/mixkit-young-woman-taking-a-shower-42916-large.mp4',
-    'https://assets.mixkit.co/videos/preview/mixkit-rain-falling-on-the-water-of-a-lake-seen-up-18312-large.mp4',
-    'https://assets.mixkit.co/videos/preview/mixkit-people-pouring-a-warm-drink-around-a-campfire-513-large.mp4',
-    'https://assets.mixkit.co/videos/preview/mixkit-stars-in-space-1610-large.mp4',
-    'https://assets.mixkit.co/videos/preview/mixkit-fireworks-illuminating-the-beach-sky-4157-large.mp4',
-    'https://assets.mixkit.co/videos/preview/mixkit-huge-trees-in-a-large-green-forest-5040-large.mp4',
-    'https://assets.mixkit.co/videos/preview/mixkit-close-up-shot-of-a-computers-internal-system-42924-large.mp4',
-    'https://assets.mixkit.co/videos/preview/mixkit-lots-of-chips-and-dice-arranged-on-a-game-table-42931-large.mp4',
-    'https://assets.mixkit.co/videos/preview/mixkit-fresh-apples-in-a-row-on-a-natural-background-42946-large.mp4',
-    'https://assets.mixkit.co/videos/preview/mixkit-very-close-shot-of-the-leaves-of-a-tree-wet-18310-large.mp4',
-    'https://assets.mixkit.co/videos/preview/mixkit-woman-preparing-her-lunch-in-the-morning-42908-large.mp4',
-    'https://assets.mixkit.co/videos/preview/mixkit-woman-flipping-her-egg-omelet-42910-large.mp4',
-    'https://assets.mixkit.co/videos/preview/mixkit-top-aerial-shot-of-seashore-with-rocks-1090-large.mp4',
-    'https://assets.mixkit.co/videos/preview/mixkit-close-tour-through-the-middle-of-an-open-book-42926-large.mp4',
-    'https://assets.mixkit.co/videos/preview/mixkit-white-sand-beach-and-palm-trees-1564-large.mp4',
-    'https://assets.mixkit.co/videos/preview/mixkit-young-woman-waking-up-in-the-morning-42896-large.mp4'
+  // static final List<String> _videos = [
+  //   'https://static.ybhospital.net/test-video-1.mp4',
+  //   'https://static.ybhospital.net/test-video-2.mp4',
+  //   'https://static.ybhospital.net/test-video-3.mp4',
+  //   'https://static.ybhospital.net/test-video-4.mp4',
+  //   'https://static.ybhospital.net/test-video-5.mp4',
+  //   'https://static.ybhospital.net/test-video-6.mp4',
+  // ];
+
+  static final List<PostModel> _posts = [
+    PostModel(
+        videoUrl:
+            'https://firebasestorage.googleapis.com/v0/b/vemerse-project.appspot.com/o/uploads%2Fusers%2Fposts%2FS8WOUABNvYb9Pize7NgvArAk8QN2%2FS8WOUABNvYb9Pize7NgvArAk8QN21674596999153.mp4?alt=media&token=5f6c884d-8ca7-42a0-82ac-87269830787e',
+        userName: 'User 1',
+        userPhotoUrl: 'https://picsum.photos/400/600?random=1',
+        videoThumbnail:
+            'https://firebasestorage.googleapis.com/v0/b/vemerse-project.appspot.com/o/uploads%2Fusers%2Fposts%2FS8WOUABNvYb9Pize7NgvArAk8QN2%2FS8WOUABNvYb9Pize7NgvArAk8QN21674597001553.jpg?alt=media&token=ad4eabc9-5e64-4ddf-9e89-a399d80d5a4a'),
+    PostModel(
+        videoUrl:
+            'https://firebasestorage.googleapis.com/v0/b/vemerse-project.appspot.com/o/uploads%2Fusers%2Fposts%2FS8WOUABNvYb9Pize7NgvArAk8QN2%2FS8WOUABNvYb9Pize7NgvArAk8QN21674683378927.mp4?alt=media&token=780b42b6-64cb-4814-ab5a-791820e2e74f',
+        userName: 'User 2',
+        userPhotoUrl: 'https://picsum.photos/400/600?random=2',
+        videoThumbnail:
+            'https://firebasestorage.googleapis.com/v0/b/vemerse-project.appspot.com/o/uploads%2Fusers%2Fposts%2FS8WOUABNvYb9Pize7NgvArAk8QN2%2FS8WOUABNvYb9Pize7NgvArAk8QN21674683382063.jpg?alt=media&token=501664a9-9706-4bf6-8d80-a1a4f8707b2e'),
+    PostModel(
+        videoUrl:
+            'https://firebasestorage.googleapis.com/v0/b/vemerse-project.appspot.com/o/uploads%2Fusers%2Fposts%2FS8WOUABNvYb9Pize7NgvArAk8QN2%2FS8WOUABNvYb9Pize7NgvArAk8QN21674683604770.mp4?alt=media&token=e840888b-9c3b-4e80-afb3-8732a492e323',
+        userName: 'User 3',
+        userPhotoUrl: 'https://picsum.photos/400/600?random=3',
+        videoThumbnail:
+            'https://firebasestorage.googleapis.com/v0/b/vemerse-project.appspot.com/o/uploads%2Fusers%2Fposts%2FS8WOUABNvYb9Pize7NgvArAk8QN2%2FS8WOUABNvYb9Pize7NgvArAk8QN21674683607836.jpg?alt=media&token=9711b6db-8edf-49f6-ba26-743fd75f7cc2'),
+    PostModel(
+        videoUrl:
+            'https://firebasestorage.googleapis.com/v0/b/vemerse-project.appspot.com/o/uploads%2Fusers%2Fposts%2FS8WOUABNvYb9Pize7NgvArAk8QN2%2FS8WOUABNvYb9Pize7NgvArAk8QN21674768757614.mp4?alt=media&token=bfc667a4-72f1-4aca-a99e-5c9752caa13d',
+        userName: 'User 4',
+        userPhotoUrl: 'https://picsum.photos/400/600?random=4',
+        videoThumbnail:
+            'https://firebasestorage.googleapis.com/v0/b/vemerse-project.appspot.com/o/uploads%2Fusers%2Fposts%2FS8WOUABNvYb9Pize7NgvArAk8QN2%2FS8WOUABNvYb9Pize7NgvArAk8QN21674768759712.jpg?alt=media&token=e6e21040-6c9a-4826-ba65-8e9d21bf3f6e'),
+    PostModel(
+        videoUrl:
+            'https://firebasestorage.googleapis.com/v0/b/vemerse-project.appspot.com/o/uploads%2Fusers%2Fposts%2FWKPtOMNv0vVeMCrUpJ11KBuVnYh1%2FWKPtOMNv0vVeMCrUpJ11KBuVnYh11674502392810.mp4?alt=media&token=dbd7a4f0-8030-4584-8fd9-6389ac93efda',
+        userName: 'User 5',
+        userPhotoUrl: 'https://picsum.photos/400/600?random=5',
+        videoThumbnail:
+            'https://firebasestorage.googleapis.com/v0/b/vemerse-project.appspot.com/o/uploads%2Fusers%2Fposts%2FWKPtOMNv0vVeMCrUpJ11KBuVnYh1%2FWKPtOMNv0vVeMCrUpJ11KBuVnYh11674502397162.jpg?alt=media&token=128992e4-fa69-4e25-8a25-2d62fc5dab38'),
+    PostModel(
+        videoUrl:
+            'https://firebasestorage.googleapis.com/v0/b/vemerse-project.appspot.com/o/uploads%2Fusers%2Fposts%2FWKPtOMNv0vVeMCrUpJ11KBuVnYh1%2FWKPtOMNv0vVeMCrUpJ11KBuVnYh11674581172994.mp4?alt=media&token=3ecb8073-f231-4742-bdbd-8edf845e1be5',
+        userName: 'User 6',
+        userPhotoUrl: 'https://picsum.photos/400/600?random=6',
+        videoThumbnail:
+            'https://firebasestorage.googleapis.com/v0/b/vemerse-project.appspot.com/o/uploads%2Fusers%2Fposts%2FWKPtOMNv0vVeMCrUpJ11KBuVnYh1%2FWKPtOMNv0vVeMCrUpJ11KBuVnYh11674581175082.jpg?alt=media&token=6943d9ab-4d3e-4e51-a06e-175f445d62c6'),
   ];
 
-  /// Simulate api call
-  static Future<List<String>> getVideos({int id = 0}) async {
-    // No more videos
-    if ((id >= _videos.length)) {
+  static Future<List<PostModel>> getPosts({int id = 0}) async {
+    // No more posts
+    if ((id >= _posts.length)) {
       return [];
     }
 
+    _posts.shuffle();
+
     await Future.delayed(const Duration(milliseconds: kLatency));
 
-    if ((id + kNextLimit >= _videos.length)) {
-      return _videos.sublist(id, _videos.length);
+    if ((id + kNextLimit >= _posts.length)) {
+      return _posts.sublist(id, _posts.length);
     }
 
-    return _videos.sublist(id, id + kNextLimit);
+    return _posts.sublist(id, id + kNextLimit);
   }
 }
