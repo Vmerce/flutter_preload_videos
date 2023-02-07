@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:video_player/video_player.dart';
 
-import 'package:flutter_preload_videos/plugins/preloader/bloc/preload_bloc.dart';
+import '../plugins/video_preloader/bloc/preload_bloc.dart';
 
 class VideoPage extends StatefulWidget {
   const VideoPage();

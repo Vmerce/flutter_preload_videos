@@ -4,7 +4,7 @@ import 'dart:developer';
 import 'package:bloc/bloc.dart';
 import 'package:flutter_preload_videos/model/post_model.dart';
 import 'package:flutter_preload_videos/main.dart';
-import 'package:flutter_preload_videos/plugins/preloader/service/api_service.dart';
+import 'package:flutter_preload_videos/plugins/video_preloader/service/api_service.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:video_player/video_player.dart';

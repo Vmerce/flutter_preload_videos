@@ -6,12 +6,12 @@ import 'package:flutter_preload_videos/model/post_model.dart';
 import 'package:flutter_preload_videos/screens/video_page.dart';
 import 'package:injectable/injectable.dart';
 
-import 'package:flutter_preload_videos/plugins/preloader/bloc/preload_bloc.dart';
-import 'package:flutter_preload_videos/plugins/preloader/core/build_context.dart';
-import 'package:flutter_preload_videos/plugins/preloader/core/constants.dart';
+import 'plugins/video_preloader/bloc/preload_bloc.dart';
+import 'plugins/video_preloader/core/build_context.dart';
+import 'plugins/video_preloader/core/constants.dart';
 import 'injection.dart';
-import 'plugins/preloader/service/api_service.dart';
-import 'plugins/preloader/service/navigation_service.dart';
+import 'plugins/video_preloader/service/api_service.dart';
+import 'plugins/video_preloader/service/navigation_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

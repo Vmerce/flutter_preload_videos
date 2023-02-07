@@ -7,8 +7,8 @@
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
-import 'package:flutter_preload_videos/plugins/preloader/bloc/preload_bloc.dart' as _i4;
-import 'plugins/preloader/service/navigation_service.dart' as _i3;
+import 'plugins/video_preloader/bloc/preload_bloc.dart' as _i4;
+import 'plugins/video_preloader/service/navigation_service.dart' as _i3;
 
 const String _prod = 'prod';
 // ignore_for_file: unnecessary_lambdas
