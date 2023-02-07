@@ -4,12 +4,26 @@ import 'dart:developer';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_preload_videos/bloc/preload_bloc.dart';
-import 'package:flutter_preload_videos/service/api_service.dart';
 import 'package:video_player/video_player.dart';
 
-class VideoPage extends StatelessWidget {
+import 'package:flutter_preload_videos/plugins/preloader/bloc/preload_bloc.dart';
+
+class VideoPage extends StatefulWidget {
   const VideoPage();
+
+  @override
+  State<VideoPage> createState() => _VideoPageState();
+}
+
+class _VideoPageState extends State<VideoPage> {
+  late PageController _pageController;
+
+  @override
+  void initState() {
+    _pageController = PageController();
+
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -19,11 +33,12 @@ class VideoPage extends StatelessWidget {
           return Column(
             children: [
               Container(
-                height: MediaQuery.of(context).size.height - 200,
+                height: MediaQuery.of(context).size.height - 88,
                 width: MediaQuery.of(context).size.width,
                 child: PageView.builder(
                   itemCount: state.posts.length,
                   scrollDirection: Axis.vertical,
+                  controller: _pageController,
                   onPageChanged: (index) =>
                       BlocProvider.of<PreloadBloc>(context, listen: false)
                           .add(PreloadEvent.onVideoIndexChanged(index)),
@@ -54,6 +69,8 @@ class VideoPage extends StatelessWidget {
                                     isLoading: _isLoading,
                                     controller: state.controllers[index]!,
                                   ),
+
+                                  //TODO: Replace with actual Post details widget here...
                                   Center(
                                     child: Column(
                                       mainAxisAlignment:
@@ -84,40 +101,47 @@ class VideoPage extends StatelessWidget {
                                         ),
                                       ],
                                     ),
-                                  )
+                                  ),
                                 ],
                               ),
                             ),
                           )
-                        : Expanded(
-                            child: Container(
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                  image: NetworkImage(
-                                      state.posts[index].videoThumbnail),
-                                  fit: BoxFit.fill,
-                                ),
+                        : Container(
+                            width: MediaQuery.of(context).size.width,
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                image: NetworkImage(
+                                    state.posts[index].videoThumbnail),
+                                fit: BoxFit.fill,
                               ),
                             ),
                           );
                   },
                 ),
               ),
-              TextButton(
-                onPressed: () async {
-                  BlocProvider.of<PreloadBloc>(context, listen: false)
-                      .add(PreloadEvent.resetPosts(state.focusedIndex));
+              Center(
+                child: TextButton(
+                  onPressed: () {
+                    BlocProvider.of<PreloadBloc>(context, listen: false)
+                        .add(PreloadEvent.resetPosts(state.focusedIndex));
 
-                  // final posts = await ApiService.getPosts();
-                  BlocProvider.of<PreloadBloc>(context, listen: false)
-                      .add(PreloadEvent.getVideosFromApi());
-                },
-                child: Container(
-                  color: Colors.white,
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      "RELOAD POSTS",
+                    // final posts = await ApiService.getPosts();
+                    BlocProvider.of<PreloadBloc>(context, listen: false)
+                        .add(PreloadEvent.getVideosFromApi());
+
+                    final oldPageController = _pageController;
+                    oldPageController.dispose();
+                    setState(() {
+                      _pageController = PageController();
+                    });
+                  },
+                  child: Container(
+                    color: Colors.white,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        "RELOAD POSTS",
+                      ),
                     ),
                   ),
                 ),
@@ -131,7 +155,7 @@ class VideoPage extends StatelessWidget {
 }
 
 /// Custom Feed Widget consisting video
-class VideoWidget extends StatelessWidget {
+class VideoWidget extends StatefulWidget {
   const VideoWidget({
     Key? key,
     required this.isLoading,
@@ -142,27 +166,77 @@ class VideoWidget extends StatelessWidget {
   final VideoPlayerController controller;
 
   @override
+  State<VideoWidget> createState() => _VideoWidgetState();
+}
+
+class _VideoWidgetState extends State<VideoWidget> {
+  double _videoPosition = 0;
+
+  void _videoListener() {
+    if (mounted) {
+      setState(() {
+        _videoPosition = widget.controller.value.position.inMilliseconds /
+            widget.controller.value.duration.inMilliseconds;
+      });
+    }
+  }
+
+  @override
+  void initState() {
+    widget.controller.addListener(_videoListener);
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    widget.controller.removeListener(_videoListener);
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Column(
+    return Stack(
       children: [
-        Expanded(
-          child: VideoPlayer(controller),
-        ),
-        AnimatedCrossFade(
-          alignment: Alignment.bottomCenter,
-          sizeCurve: Curves.decelerate,
-          duration: const Duration(milliseconds: 400),
-          firstChild: Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: CupertinoActivityIndicator(
-              color: Colors.white,
-              radius: 8,
+        Column(
+          children: [
+            Expanded(
+              child: VideoPlayer(widget.controller),
             ),
-          ),
-          secondChild: const SizedBox(),
-          crossFadeState:
-              isLoading ? CrossFadeState.showFirst : CrossFadeState.showSecond,
+            AnimatedCrossFade(
+              alignment: Alignment.bottomCenter,
+              sizeCurve: Curves.decelerate,
+              duration: const Duration(milliseconds: 400),
+              firstChild: Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: CupertinoActivityIndicator(
+                  color: Colors.white,
+                  radius: 8,
+                ),
+              ),
+              secondChild: const SizedBox(),
+              crossFadeState: widget.isLoading
+                  ? CrossFadeState.showFirst
+                  : CrossFadeState.showSecond,
+            ),
+          ],
         ),
+        Positioned(
+          bottom: 0,
+          child: AnimatedContainer(
+            height: 5,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(0),
+                  topLeft: Radius.circular(0),
+                  bottomRight: Radius.circular(5),
+                  topRight: Radius.circular(5),
+                ),
+                color: Colors.amber.shade900),
+            width: _videoPosition * MediaQuery.of(context).size.width,
+            duration: const Duration(milliseconds: 500),
+            curve: Curves.linear,
+          ),
+        )
       ],
     );
   }

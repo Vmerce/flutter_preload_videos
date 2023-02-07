@@ -22,6 +22,7 @@ mixin _$PreloadEvent {
     required TResult Function() setLoading,
     required TResult Function(int index) resetPosts,
     required TResult Function(int index) pauseVideo,
+    required TResult Function(int index) stopVideoLooping,
     required TResult Function(int index) playVideo,
     required TResult Function(List<PostModel> posts) updatePosts,
     required TResult Function(int index) onVideoIndexChanged,
@@ -33,6 +34,7 @@ mixin _$PreloadEvent {
     TResult Function()? setLoading,
     TResult Function(int index)? resetPosts,
     TResult Function(int index)? pauseVideo,
+    TResult Function(int index)? stopVideoLooping,
     TResult Function(int index)? playVideo,
     TResult Function(List<PostModel> posts)? updatePosts,
     TResult Function(int index)? onVideoIndexChanged,
@@ -44,6 +46,7 @@ mixin _$PreloadEvent {
     TResult Function()? setLoading,
     TResult Function(int index)? resetPosts,
     TResult Function(int index)? pauseVideo,
+    TResult Function(int index)? stopVideoLooping,
     TResult Function(int index)? playVideo,
     TResult Function(List<PostModel> posts)? updatePosts,
     TResult Function(int index)? onVideoIndexChanged,
@@ -56,6 +59,7 @@ mixin _$PreloadEvent {
     required TResult Function(_SetLoading value) setLoading,
     required TResult Function(_ResetPosts value) resetPosts,
     required TResult Function(_PauseVideo value) pauseVideo,
+    required TResult Function(_StopVideoLooping value) stopVideoLooping,
     required TResult Function(_PlayVideo value) playVideo,
     required TResult Function(_updatePosts value) updatePosts,
     required TResult Function(_OnVideoIndexChanged value) onVideoIndexChanged,
@@ -67,6 +71,7 @@ mixin _$PreloadEvent {
     TResult Function(_SetLoading value)? setLoading,
     TResult Function(_ResetPosts value)? resetPosts,
     TResult Function(_PauseVideo value)? pauseVideo,
+    TResult Function(_StopVideoLooping value)? stopVideoLooping,
     TResult Function(_PlayVideo value)? playVideo,
     TResult Function(_updatePosts value)? updatePosts,
     TResult Function(_OnVideoIndexChanged value)? onVideoIndexChanged,
@@ -78,6 +83,7 @@ mixin _$PreloadEvent {
     TResult Function(_SetLoading value)? setLoading,
     TResult Function(_ResetPosts value)? resetPosts,
     TResult Function(_PauseVideo value)? pauseVideo,
+    TResult Function(_StopVideoLooping value)? stopVideoLooping,
     TResult Function(_PlayVideo value)? playVideo,
     TResult Function(_updatePosts value)? updatePosts,
     TResult Function(_OnVideoIndexChanged value)? onVideoIndexChanged,
@@ -147,6 +153,7 @@ class _$_GetVideosFromApi implements _GetVideosFromApi {
     required TResult Function() setLoading,
     required TResult Function(int index) resetPosts,
     required TResult Function(int index) pauseVideo,
+    required TResult Function(int index) stopVideoLooping,
     required TResult Function(int index) playVideo,
     required TResult Function(List<PostModel> posts) updatePosts,
     required TResult Function(int index) onVideoIndexChanged,
@@ -161,6 +168,7 @@ class _$_GetVideosFromApi implements _GetVideosFromApi {
     TResult Function()? setLoading,
     TResult Function(int index)? resetPosts,
     TResult Function(int index)? pauseVideo,
+    TResult Function(int index)? stopVideoLooping,
     TResult Function(int index)? playVideo,
     TResult Function(List<PostModel> posts)? updatePosts,
     TResult Function(int index)? onVideoIndexChanged,
@@ -175,6 +183,7 @@ class _$_GetVideosFromApi implements _GetVideosFromApi {
     TResult Function()? setLoading,
     TResult Function(int index)? resetPosts,
     TResult Function(int index)? pauseVideo,
+    TResult Function(int index)? stopVideoLooping,
     TResult Function(int index)? playVideo,
     TResult Function(List<PostModel> posts)? updatePosts,
     TResult Function(int index)? onVideoIndexChanged,
@@ -193,6 +202,7 @@ class _$_GetVideosFromApi implements _GetVideosFromApi {
     required TResult Function(_SetLoading value) setLoading,
     required TResult Function(_ResetPosts value) resetPosts,
     required TResult Function(_PauseVideo value) pauseVideo,
+    required TResult Function(_StopVideoLooping value) stopVideoLooping,
     required TResult Function(_PlayVideo value) playVideo,
     required TResult Function(_updatePosts value) updatePosts,
     required TResult Function(_OnVideoIndexChanged value) onVideoIndexChanged,
@@ -207,6 +217,7 @@ class _$_GetVideosFromApi implements _GetVideosFromApi {
     TResult Function(_SetLoading value)? setLoading,
     TResult Function(_ResetPosts value)? resetPosts,
     TResult Function(_PauseVideo value)? pauseVideo,
+    TResult Function(_StopVideoLooping value)? stopVideoLooping,
     TResult Function(_PlayVideo value)? playVideo,
     TResult Function(_updatePosts value)? updatePosts,
     TResult Function(_OnVideoIndexChanged value)? onVideoIndexChanged,
@@ -221,6 +232,7 @@ class _$_GetVideosFromApi implements _GetVideosFromApi {
     TResult Function(_SetLoading value)? setLoading,
     TResult Function(_ResetPosts value)? resetPosts,
     TResult Function(_PauseVideo value)? pauseVideo,
+    TResult Function(_StopVideoLooping value)? stopVideoLooping,
     TResult Function(_PlayVideo value)? playVideo,
     TResult Function(_updatePosts value)? updatePosts,
     TResult Function(_OnVideoIndexChanged value)? onVideoIndexChanged,
@@ -281,6 +293,7 @@ class _$_SetLoading implements _SetLoading {
     required TResult Function() setLoading,
     required TResult Function(int index) resetPosts,
     required TResult Function(int index) pauseVideo,
+    required TResult Function(int index) stopVideoLooping,
     required TResult Function(int index) playVideo,
     required TResult Function(List<PostModel> posts) updatePosts,
     required TResult Function(int index) onVideoIndexChanged,
@@ -295,6 +308,7 @@ class _$_SetLoading implements _SetLoading {
     TResult Function()? setLoading,
     TResult Function(int index)? resetPosts,
     TResult Function(int index)? pauseVideo,
+    TResult Function(int index)? stopVideoLooping,
     TResult Function(int index)? playVideo,
     TResult Function(List<PostModel> posts)? updatePosts,
     TResult Function(int index)? onVideoIndexChanged,
@@ -309,6 +323,7 @@ class _$_SetLoading implements _SetLoading {
     TResult Function()? setLoading,
     TResult Function(int index)? resetPosts,
     TResult Function(int index)? pauseVideo,
+    TResult Function(int index)? stopVideoLooping,
     TResult Function(int index)? playVideo,
     TResult Function(List<PostModel> posts)? updatePosts,
     TResult Function(int index)? onVideoIndexChanged,
@@ -327,6 +342,7 @@ class _$_SetLoading implements _SetLoading {
     required TResult Function(_SetLoading value) setLoading,
     required TResult Function(_ResetPosts value) resetPosts,
     required TResult Function(_PauseVideo value) pauseVideo,
+    required TResult Function(_StopVideoLooping value) stopVideoLooping,
     required TResult Function(_PlayVideo value) playVideo,
     required TResult Function(_updatePosts value) updatePosts,
     required TResult Function(_OnVideoIndexChanged value) onVideoIndexChanged,
@@ -341,6 +357,7 @@ class _$_SetLoading implements _SetLoading {
     TResult Function(_SetLoading value)? setLoading,
     TResult Function(_ResetPosts value)? resetPosts,
     TResult Function(_PauseVideo value)? pauseVideo,
+    TResult Function(_StopVideoLooping value)? stopVideoLooping,
     TResult Function(_PlayVideo value)? playVideo,
     TResult Function(_updatePosts value)? updatePosts,
     TResult Function(_OnVideoIndexChanged value)? onVideoIndexChanged,
@@ -355,6 +372,7 @@ class _$_SetLoading implements _SetLoading {
     TResult Function(_SetLoading value)? setLoading,
     TResult Function(_ResetPosts value)? resetPosts,
     TResult Function(_PauseVideo value)? pauseVideo,
+    TResult Function(_StopVideoLooping value)? stopVideoLooping,
     TResult Function(_PlayVideo value)? playVideo,
     TResult Function(_updatePosts value)? updatePosts,
     TResult Function(_OnVideoIndexChanged value)? onVideoIndexChanged,
@@ -439,6 +457,7 @@ class _$_ResetPosts implements _ResetPosts {
     required TResult Function() setLoading,
     required TResult Function(int index) resetPosts,
     required TResult Function(int index) pauseVideo,
+    required TResult Function(int index) stopVideoLooping,
     required TResult Function(int index) playVideo,
     required TResult Function(List<PostModel> posts) updatePosts,
     required TResult Function(int index) onVideoIndexChanged,
@@ -453,6 +472,7 @@ class _$_ResetPosts implements _ResetPosts {
     TResult Function()? setLoading,
     TResult Function(int index)? resetPosts,
     TResult Function(int index)? pauseVideo,
+    TResult Function(int index)? stopVideoLooping,
     TResult Function(int index)? playVideo,
     TResult Function(List<PostModel> posts)? updatePosts,
     TResult Function(int index)? onVideoIndexChanged,
@@ -467,6 +487,7 @@ class _$_ResetPosts implements _ResetPosts {
     TResult Function()? setLoading,
     TResult Function(int index)? resetPosts,
     TResult Function(int index)? pauseVideo,
+    TResult Function(int index)? stopVideoLooping,
     TResult Function(int index)? playVideo,
     TResult Function(List<PostModel> posts)? updatePosts,
     TResult Function(int index)? onVideoIndexChanged,
@@ -485,6 +506,7 @@ class _$_ResetPosts implements _ResetPosts {
     required TResult Function(_SetLoading value) setLoading,
     required TResult Function(_ResetPosts value) resetPosts,
     required TResult Function(_PauseVideo value) pauseVideo,
+    required TResult Function(_StopVideoLooping value) stopVideoLooping,
     required TResult Function(_PlayVideo value) playVideo,
     required TResult Function(_updatePosts value) updatePosts,
     required TResult Function(_OnVideoIndexChanged value) onVideoIndexChanged,
@@ -499,6 +521,7 @@ class _$_ResetPosts implements _ResetPosts {
     TResult Function(_SetLoading value)? setLoading,
     TResult Function(_ResetPosts value)? resetPosts,
     TResult Function(_PauseVideo value)? pauseVideo,
+    TResult Function(_StopVideoLooping value)? stopVideoLooping,
     TResult Function(_PlayVideo value)? playVideo,
     TResult Function(_updatePosts value)? updatePosts,
     TResult Function(_OnVideoIndexChanged value)? onVideoIndexChanged,
@@ -513,6 +536,7 @@ class _$_ResetPosts implements _ResetPosts {
     TResult Function(_SetLoading value)? setLoading,
     TResult Function(_ResetPosts value)? resetPosts,
     TResult Function(_PauseVideo value)? pauseVideo,
+    TResult Function(_StopVideoLooping value)? stopVideoLooping,
     TResult Function(_PlayVideo value)? playVideo,
     TResult Function(_updatePosts value)? updatePosts,
     TResult Function(_OnVideoIndexChanged value)? onVideoIndexChanged,
@@ -602,6 +626,7 @@ class _$_PauseVideo implements _PauseVideo {
     required TResult Function() setLoading,
     required TResult Function(int index) resetPosts,
     required TResult Function(int index) pauseVideo,
+    required TResult Function(int index) stopVideoLooping,
     required TResult Function(int index) playVideo,
     required TResult Function(List<PostModel> posts) updatePosts,
     required TResult Function(int index) onVideoIndexChanged,
@@ -616,6 +641,7 @@ class _$_PauseVideo implements _PauseVideo {
     TResult Function()? setLoading,
     TResult Function(int index)? resetPosts,
     TResult Function(int index)? pauseVideo,
+    TResult Function(int index)? stopVideoLooping,
     TResult Function(int index)? playVideo,
     TResult Function(List<PostModel> posts)? updatePosts,
     TResult Function(int index)? onVideoIndexChanged,
@@ -630,6 +656,7 @@ class _$_PauseVideo implements _PauseVideo {
     TResult Function()? setLoading,
     TResult Function(int index)? resetPosts,
     TResult Function(int index)? pauseVideo,
+    TResult Function(int index)? stopVideoLooping,
     TResult Function(int index)? playVideo,
     TResult Function(List<PostModel> posts)? updatePosts,
     TResult Function(int index)? onVideoIndexChanged,
@@ -648,6 +675,7 @@ class _$_PauseVideo implements _PauseVideo {
     required TResult Function(_SetLoading value) setLoading,
     required TResult Function(_ResetPosts value) resetPosts,
     required TResult Function(_PauseVideo value) pauseVideo,
+    required TResult Function(_StopVideoLooping value) stopVideoLooping,
     required TResult Function(_PlayVideo value) playVideo,
     required TResult Function(_updatePosts value) updatePosts,
     required TResult Function(_OnVideoIndexChanged value) onVideoIndexChanged,
@@ -662,6 +690,7 @@ class _$_PauseVideo implements _PauseVideo {
     TResult Function(_SetLoading value)? setLoading,
     TResult Function(_ResetPosts value)? resetPosts,
     TResult Function(_PauseVideo value)? pauseVideo,
+    TResult Function(_StopVideoLooping value)? stopVideoLooping,
     TResult Function(_PlayVideo value)? playVideo,
     TResult Function(_updatePosts value)? updatePosts,
     TResult Function(_OnVideoIndexChanged value)? onVideoIndexChanged,
@@ -676,6 +705,7 @@ class _$_PauseVideo implements _PauseVideo {
     TResult Function(_SetLoading value)? setLoading,
     TResult Function(_ResetPosts value)? resetPosts,
     TResult Function(_PauseVideo value)? pauseVideo,
+    TResult Function(_StopVideoLooping value)? stopVideoLooping,
     TResult Function(_PlayVideo value)? playVideo,
     TResult Function(_updatePosts value)? updatePosts,
     TResult Function(_OnVideoIndexChanged value)? onVideoIndexChanged,
@@ -694,6 +724,176 @@ abstract class _PauseVideo implements PreloadEvent {
   int get index => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$$_PauseVideoCopyWith<_$_PauseVideo> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_StopVideoLoopingCopyWith<$Res> {
+  factory _$$_StopVideoLoopingCopyWith(
+          _$_StopVideoLooping value, $Res Function(_$_StopVideoLooping) then) =
+      __$$_StopVideoLoopingCopyWithImpl<$Res>;
+  $Res call({int index});
+}
+
+/// @nodoc
+class __$$_StopVideoLoopingCopyWithImpl<$Res>
+    extends _$PreloadEventCopyWithImpl<$Res>
+    implements _$$_StopVideoLoopingCopyWith<$Res> {
+  __$$_StopVideoLoopingCopyWithImpl(
+      _$_StopVideoLooping _value, $Res Function(_$_StopVideoLooping) _then)
+      : super(_value, (v) => _then(v as _$_StopVideoLooping));
+
+  @override
+  _$_StopVideoLooping get _value => super._value as _$_StopVideoLooping;
+
+  @override
+  $Res call({
+    Object? index = freezed,
+  }) {
+    return _then(_$_StopVideoLooping(
+      index == freezed
+          ? _value.index
+          : index // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_StopVideoLooping implements _StopVideoLooping {
+  const _$_StopVideoLooping(this.index);
+
+  @override
+  final int index;
+
+  @override
+  String toString() {
+    return 'PreloadEvent.stopVideoLooping(index: $index)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_StopVideoLooping &&
+            const DeepCollectionEquality().equals(other.index, index));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(index));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_StopVideoLoopingCopyWith<_$_StopVideoLooping> get copyWith =>
+      __$$_StopVideoLoopingCopyWithImpl<_$_StopVideoLooping>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getVideosFromApi,
+    required TResult Function() setLoading,
+    required TResult Function(int index) resetPosts,
+    required TResult Function(int index) pauseVideo,
+    required TResult Function(int index) stopVideoLooping,
+    required TResult Function(int index) playVideo,
+    required TResult Function(List<PostModel> posts) updatePosts,
+    required TResult Function(int index) onVideoIndexChanged,
+  }) {
+    return stopVideoLooping(index);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? getVideosFromApi,
+    TResult Function()? setLoading,
+    TResult Function(int index)? resetPosts,
+    TResult Function(int index)? pauseVideo,
+    TResult Function(int index)? stopVideoLooping,
+    TResult Function(int index)? playVideo,
+    TResult Function(List<PostModel> posts)? updatePosts,
+    TResult Function(int index)? onVideoIndexChanged,
+  }) {
+    return stopVideoLooping?.call(index);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getVideosFromApi,
+    TResult Function()? setLoading,
+    TResult Function(int index)? resetPosts,
+    TResult Function(int index)? pauseVideo,
+    TResult Function(int index)? stopVideoLooping,
+    TResult Function(int index)? playVideo,
+    TResult Function(List<PostModel> posts)? updatePosts,
+    TResult Function(int index)? onVideoIndexChanged,
+    required TResult orElse(),
+  }) {
+    if (stopVideoLooping != null) {
+      return stopVideoLooping(index);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_GetVideosFromApi value) getVideosFromApi,
+    required TResult Function(_SetLoading value) setLoading,
+    required TResult Function(_ResetPosts value) resetPosts,
+    required TResult Function(_PauseVideo value) pauseVideo,
+    required TResult Function(_StopVideoLooping value) stopVideoLooping,
+    required TResult Function(_PlayVideo value) playVideo,
+    required TResult Function(_updatePosts value) updatePosts,
+    required TResult Function(_OnVideoIndexChanged value) onVideoIndexChanged,
+  }) {
+    return stopVideoLooping(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_GetVideosFromApi value)? getVideosFromApi,
+    TResult Function(_SetLoading value)? setLoading,
+    TResult Function(_ResetPosts value)? resetPosts,
+    TResult Function(_PauseVideo value)? pauseVideo,
+    TResult Function(_StopVideoLooping value)? stopVideoLooping,
+    TResult Function(_PlayVideo value)? playVideo,
+    TResult Function(_updatePosts value)? updatePosts,
+    TResult Function(_OnVideoIndexChanged value)? onVideoIndexChanged,
+  }) {
+    return stopVideoLooping?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_GetVideosFromApi value)? getVideosFromApi,
+    TResult Function(_SetLoading value)? setLoading,
+    TResult Function(_ResetPosts value)? resetPosts,
+    TResult Function(_PauseVideo value)? pauseVideo,
+    TResult Function(_StopVideoLooping value)? stopVideoLooping,
+    TResult Function(_PlayVideo value)? playVideo,
+    TResult Function(_updatePosts value)? updatePosts,
+    TResult Function(_OnVideoIndexChanged value)? onVideoIndexChanged,
+    required TResult orElse(),
+  }) {
+    if (stopVideoLooping != null) {
+      return stopVideoLooping(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _StopVideoLooping implements PreloadEvent {
+  const factory _StopVideoLooping(final int index) = _$_StopVideoLooping;
+
+  int get index => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$$_StopVideoLoopingCopyWith<_$_StopVideoLooping> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -765,6 +965,7 @@ class _$_PlayVideo implements _PlayVideo {
     required TResult Function() setLoading,
     required TResult Function(int index) resetPosts,
     required TResult Function(int index) pauseVideo,
+    required TResult Function(int index) stopVideoLooping,
     required TResult Function(int index) playVideo,
     required TResult Function(List<PostModel> posts) updatePosts,
     required TResult Function(int index) onVideoIndexChanged,
@@ -779,6 +980,7 @@ class _$_PlayVideo implements _PlayVideo {
     TResult Function()? setLoading,
     TResult Function(int index)? resetPosts,
     TResult Function(int index)? pauseVideo,
+    TResult Function(int index)? stopVideoLooping,
     TResult Function(int index)? playVideo,
     TResult Function(List<PostModel> posts)? updatePosts,
     TResult Function(int index)? onVideoIndexChanged,
@@ -793,6 +995,7 @@ class _$_PlayVideo implements _PlayVideo {
     TResult Function()? setLoading,
     TResult Function(int index)? resetPosts,
     TResult Function(int index)? pauseVideo,
+    TResult Function(int index)? stopVideoLooping,
     TResult Function(int index)? playVideo,
     TResult Function(List<PostModel> posts)? updatePosts,
     TResult Function(int index)? onVideoIndexChanged,
@@ -811,6 +1014,7 @@ class _$_PlayVideo implements _PlayVideo {
     required TResult Function(_SetLoading value) setLoading,
     required TResult Function(_ResetPosts value) resetPosts,
     required TResult Function(_PauseVideo value) pauseVideo,
+    required TResult Function(_StopVideoLooping value) stopVideoLooping,
     required TResult Function(_PlayVideo value) playVideo,
     required TResult Function(_updatePosts value) updatePosts,
     required TResult Function(_OnVideoIndexChanged value) onVideoIndexChanged,
@@ -825,6 +1029,7 @@ class _$_PlayVideo implements _PlayVideo {
     TResult Function(_SetLoading value)? setLoading,
     TResult Function(_ResetPosts value)? resetPosts,
     TResult Function(_PauseVideo value)? pauseVideo,
+    TResult Function(_StopVideoLooping value)? stopVideoLooping,
     TResult Function(_PlayVideo value)? playVideo,
     TResult Function(_updatePosts value)? updatePosts,
     TResult Function(_OnVideoIndexChanged value)? onVideoIndexChanged,
@@ -839,6 +1044,7 @@ class _$_PlayVideo implements _PlayVideo {
     TResult Function(_SetLoading value)? setLoading,
     TResult Function(_ResetPosts value)? resetPosts,
     TResult Function(_PauseVideo value)? pauseVideo,
+    TResult Function(_StopVideoLooping value)? stopVideoLooping,
     TResult Function(_PlayVideo value)? playVideo,
     TResult Function(_updatePosts value)? updatePosts,
     TResult Function(_OnVideoIndexChanged value)? onVideoIndexChanged,
@@ -933,6 +1139,7 @@ class _$_updatePosts implements _updatePosts {
     required TResult Function() setLoading,
     required TResult Function(int index) resetPosts,
     required TResult Function(int index) pauseVideo,
+    required TResult Function(int index) stopVideoLooping,
     required TResult Function(int index) playVideo,
     required TResult Function(List<PostModel> posts) updatePosts,
     required TResult Function(int index) onVideoIndexChanged,
@@ -947,6 +1154,7 @@ class _$_updatePosts implements _updatePosts {
     TResult Function()? setLoading,
     TResult Function(int index)? resetPosts,
     TResult Function(int index)? pauseVideo,
+    TResult Function(int index)? stopVideoLooping,
     TResult Function(int index)? playVideo,
     TResult Function(List<PostModel> posts)? updatePosts,
     TResult Function(int index)? onVideoIndexChanged,
@@ -961,6 +1169,7 @@ class _$_updatePosts implements _updatePosts {
     TResult Function()? setLoading,
     TResult Function(int index)? resetPosts,
     TResult Function(int index)? pauseVideo,
+    TResult Function(int index)? stopVideoLooping,
     TResult Function(int index)? playVideo,
     TResult Function(List<PostModel> posts)? updatePosts,
     TResult Function(int index)? onVideoIndexChanged,
@@ -979,6 +1188,7 @@ class _$_updatePosts implements _updatePosts {
     required TResult Function(_SetLoading value) setLoading,
     required TResult Function(_ResetPosts value) resetPosts,
     required TResult Function(_PauseVideo value) pauseVideo,
+    required TResult Function(_StopVideoLooping value) stopVideoLooping,
     required TResult Function(_PlayVideo value) playVideo,
     required TResult Function(_updatePosts value) updatePosts,
     required TResult Function(_OnVideoIndexChanged value) onVideoIndexChanged,
@@ -993,6 +1203,7 @@ class _$_updatePosts implements _updatePosts {
     TResult Function(_SetLoading value)? setLoading,
     TResult Function(_ResetPosts value)? resetPosts,
     TResult Function(_PauseVideo value)? pauseVideo,
+    TResult Function(_StopVideoLooping value)? stopVideoLooping,
     TResult Function(_PlayVideo value)? playVideo,
     TResult Function(_updatePosts value)? updatePosts,
     TResult Function(_OnVideoIndexChanged value)? onVideoIndexChanged,
@@ -1007,6 +1218,7 @@ class _$_updatePosts implements _updatePosts {
     TResult Function(_SetLoading value)? setLoading,
     TResult Function(_ResetPosts value)? resetPosts,
     TResult Function(_PauseVideo value)? pauseVideo,
+    TResult Function(_StopVideoLooping value)? stopVideoLooping,
     TResult Function(_PlayVideo value)? playVideo,
     TResult Function(_updatePosts value)? updatePosts,
     TResult Function(_OnVideoIndexChanged value)? onVideoIndexChanged,
@@ -1098,6 +1310,7 @@ class _$_OnVideoIndexChanged implements _OnVideoIndexChanged {
     required TResult Function() setLoading,
     required TResult Function(int index) resetPosts,
     required TResult Function(int index) pauseVideo,
+    required TResult Function(int index) stopVideoLooping,
     required TResult Function(int index) playVideo,
     required TResult Function(List<PostModel> posts) updatePosts,
     required TResult Function(int index) onVideoIndexChanged,
@@ -1112,6 +1325,7 @@ class _$_OnVideoIndexChanged implements _OnVideoIndexChanged {
     TResult Function()? setLoading,
     TResult Function(int index)? resetPosts,
     TResult Function(int index)? pauseVideo,
+    TResult Function(int index)? stopVideoLooping,
     TResult Function(int index)? playVideo,
     TResult Function(List<PostModel> posts)? updatePosts,
     TResult Function(int index)? onVideoIndexChanged,
@@ -1126,6 +1340,7 @@ class _$_OnVideoIndexChanged implements _OnVideoIndexChanged {
     TResult Function()? setLoading,
     TResult Function(int index)? resetPosts,
     TResult Function(int index)? pauseVideo,
+    TResult Function(int index)? stopVideoLooping,
     TResult Function(int index)? playVideo,
     TResult Function(List<PostModel> posts)? updatePosts,
     TResult Function(int index)? onVideoIndexChanged,
@@ -1144,6 +1359,7 @@ class _$_OnVideoIndexChanged implements _OnVideoIndexChanged {
     required TResult Function(_SetLoading value) setLoading,
     required TResult Function(_ResetPosts value) resetPosts,
     required TResult Function(_PauseVideo value) pauseVideo,
+    required TResult Function(_StopVideoLooping value) stopVideoLooping,
     required TResult Function(_PlayVideo value) playVideo,
     required TResult Function(_updatePosts value) updatePosts,
     required TResult Function(_OnVideoIndexChanged value) onVideoIndexChanged,
@@ -1158,6 +1374,7 @@ class _$_OnVideoIndexChanged implements _OnVideoIndexChanged {
     TResult Function(_SetLoading value)? setLoading,
     TResult Function(_ResetPosts value)? resetPosts,
     TResult Function(_PauseVideo value)? pauseVideo,
+    TResult Function(_StopVideoLooping value)? stopVideoLooping,
     TResult Function(_PlayVideo value)? playVideo,
     TResult Function(_updatePosts value)? updatePosts,
     TResult Function(_OnVideoIndexChanged value)? onVideoIndexChanged,
@@ -1172,6 +1389,7 @@ class _$_OnVideoIndexChanged implements _OnVideoIndexChanged {
     TResult Function(_SetLoading value)? setLoading,
     TResult Function(_ResetPosts value)? resetPosts,
     TResult Function(_PauseVideo value)? pauseVideo,
+    TResult Function(_StopVideoLooping value)? stopVideoLooping,
     TResult Function(_PlayVideo value)? playVideo,
     TResult Function(_updatePosts value)? updatePosts,
     TResult Function(_OnVideoIndexChanged value)? onVideoIndexChanged,

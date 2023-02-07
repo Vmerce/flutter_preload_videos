@@ -6,6 +6,7 @@ class PreloadEvent with _$PreloadEvent {
   const factory PreloadEvent.setLoading() = _SetLoading;
   const factory PreloadEvent.resetPosts(int index) = _ResetPosts;
   const factory PreloadEvent.pauseVideo(int index) = _PauseVideo;
+  const factory PreloadEvent.stopVideoLooping(int index) = _StopVideoLooping;
   const factory PreloadEvent.playVideo(int index) = _PlayVideo;
   const factory PreloadEvent.updatePosts(List<PostModel> posts) = _updatePosts;
   const factory PreloadEvent.onVideoIndexChanged(int index) =

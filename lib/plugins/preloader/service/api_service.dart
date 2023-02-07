@@ -1,5 +1,6 @@
-import 'package:flutter_preload_videos/bloc/post_model.dart';
-import 'package:flutter_preload_videos/core/constants.dart';
+import 'package:flutter_preload_videos/model/post_model.dart';
+import 'package:flutter_preload_videos/plugins/preloader/core/constants.dart';
+
 
 class ApiService {
   // static final List<String> _videos = [
