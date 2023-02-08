@@ -2,7 +2,7 @@ import 'dart:async';
 import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
-import 'package:flutter_preload_videos/model/post_model.dart';
+import 'package:flutter_preload_videos/models/post_model.dart';
 import 'package:flutter_preload_videos/main.dart';
 import 'package:flutter_preload_videos/plugins/video_preloader/service/api_service.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';

@@ -2,7 +2,7 @@ import 'dart:isolate';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_preload_videos/model/post_model.dart';
+import 'package:flutter_preload_videos/models/post_model.dart';
 import 'package:flutter_preload_videos/screens/tabs/tab_posts_browser.dart';
 import 'package:injectable/injectable.dart';
 

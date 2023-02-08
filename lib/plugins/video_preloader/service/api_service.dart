@@ -1,4 +1,4 @@
-import 'package:flutter_preload_videos/model/post_model.dart';
+import 'package:flutter_preload_videos/models/post_model.dart';
 import 'package:flutter_preload_videos/plugins/video_preloader/core/constants.dart';
 
 
