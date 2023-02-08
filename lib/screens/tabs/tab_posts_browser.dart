@@ -1,21 +1,20 @@
 // import 'package:flutter/cupertino.dart';
 import 'dart:developer';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:video_player/video_player.dart';
+import 'package:flutter_preload_videos/plugins/post_video_player/post_video_player.dart';
 
-import '../plugins/video_preloader/bloc/preload_bloc.dart';
+import '../../plugins/video_preloader/bloc/preload_bloc.dart';
 
-class VideoPage extends StatefulWidget {
-  const VideoPage();
+class TabPostsBrowser extends StatefulWidget {
+  const TabPostsBrowser();
 
   @override
-  State<VideoPage> createState() => _VideoPageState();
+  State<TabPostsBrowser> createState() => _TabPostsBrowserState();
 }
 
-class _VideoPageState extends State<VideoPage> {
+class _TabPostsBrowserState extends State<TabPostsBrowser> {
   late PageController _pageController;
 
   @override
@@ -65,7 +64,7 @@ class _VideoPageState extends State<VideoPage> {
                               },
                               child: Stack(
                                 children: [
-                                  VideoWidget(
+                                  PostVideoPlayer(
                                     isLoading: _isLoading,
                                     controller: state.controllers[index]!,
                                   ),
@@ -155,89 +154,89 @@ class _VideoPageState extends State<VideoPage> {
 }
 
 /// Custom Feed Widget consisting video
-class VideoWidget extends StatefulWidget {
-  const VideoWidget({
-    Key? key,
-    required this.isLoading,
-    required this.controller,
-  });
+// class PostVideoPlayer extends StatefulWidget {
+//   const PostVideoPlayer({
+//     Key? key,
+//     required this.isLoading,
+//     required this.controller,
+//   });
 
-  final bool isLoading;
-  final VideoPlayerController controller;
+//   final bool isLoading;
+//   final VideoPlayerController controller;
 
-  @override
-  State<VideoWidget> createState() => _VideoWidgetState();
-}
+//   @override
+//   State<PostVideoPlayer> createState() => _PostVideoPlayerState();
+// }
 
-class _VideoWidgetState extends State<VideoWidget> {
-  double _videoPosition = 0;
+// class _PostVideoPlayerState extends State<PostVideoPlayer> {
+//   double _videoPosition = 0;
 
-  void _videoListener() {
-    if (mounted) {
-      setState(() {
-        _videoPosition = widget.controller.value.position.inMilliseconds /
-            widget.controller.value.duration.inMilliseconds;
-      });
-    }
-  }
+//   void _videoListener() {
+//     if (mounted) {
+//       setState(() {
+//         _videoPosition = widget.controller.value.position.inMilliseconds /
+//             widget.controller.value.duration.inMilliseconds;
+//       });
+//     }
+//   }
 
-  @override
-  void initState() {
-    widget.controller.addListener(_videoListener);
-    super.initState();
-  }
+//   @override
+//   void initState() {
+//     widget.controller.addListener(_videoListener);
+//     super.initState();
+//   }
 
-  @override
-  void dispose() {
-    widget.controller.removeListener(_videoListener);
-    super.dispose();
-  }
+//   @override
+//   void dispose() {
+//     widget.controller.removeListener(_videoListener);
+//     super.dispose();
+//   }
 
-  @override
-  Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Column(
-          children: [
-            Expanded(
-              child: VideoPlayer(widget.controller),
-            ),
-            AnimatedCrossFade(
-              alignment: Alignment.bottomCenter,
-              sizeCurve: Curves.decelerate,
-              duration: const Duration(milliseconds: 400),
-              firstChild: Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: CupertinoActivityIndicator(
-                  color: Colors.white,
-                  radius: 8,
-                ),
-              ),
-              secondChild: const SizedBox(),
-              crossFadeState: widget.isLoading
-                  ? CrossFadeState.showFirst
-                  : CrossFadeState.showSecond,
-            ),
-          ],
-        ),
-        Positioned(
-          bottom: 0,
-          child: AnimatedContainer(
-            height: 5,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(0),
-                  topLeft: Radius.circular(0),
-                  bottomRight: Radius.circular(5),
-                  topRight: Radius.circular(5),
-                ),
-                color: Colors.amber.shade900),
-            width: _videoPosition * MediaQuery.of(context).size.width,
-            duration: const Duration(milliseconds: 500),
-            curve: Curves.linear,
-          ),
-        )
-      ],
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Stack(
+//       children: [
+//         Column(
+//           children: [
+//             Expanded(
+//               child: VideoPlayer(widget.controller),
+//             ),
+//             AnimatedCrossFade(
+//               alignment: Alignment.bottomCenter,
+//               sizeCurve: Curves.decelerate,
+//               duration: const Duration(milliseconds: 400),
+//               firstChild: Padding(
+//                 padding: const EdgeInsets.all(10.0),
+//                 child: CupertinoActivityIndicator(
+//                   color: Colors.white,
+//                   radius: 8,
+//                 ),
+//               ),
+//               secondChild: const SizedBox(),
+//               crossFadeState: widget.isLoading
+//                   ? CrossFadeState.showFirst
+//                   : CrossFadeState.showSecond,
+//             ),
+//           ],
+//         ),
+//         Positioned(
+//           bottom: 0,
+//           child: AnimatedContainer(
+//             height: 5,
+//             decoration: BoxDecoration(
+//                 borderRadius: BorderRadius.only(
+//                   bottomLeft: Radius.circular(0),
+//                   topLeft: Radius.circular(0),
+//                   bottomRight: Radius.circular(5),
+//                   topRight: Radius.circular(5),
+//                 ),
+//                 color: Colors.amber.shade900),
+//             width: _videoPosition * MediaQuery.of(context).size.width,
+//             duration: const Duration(milliseconds: 500),
+//             curve: Curves.linear,
+//           ),
+//         )
+//       ],
+//     );
+//   }
+// }
